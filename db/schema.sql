@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS bearded_db;
+CREATE DATABASE bearded_db;
