@@ -1,73 +1,47 @@
-const router = require('express').Router();
-const { Reviews, User, Comments, Products } = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const { Review, User } = require("../models");
+const withAuth = require("../utils/auth");
 
+router.get("/", async (req, res) => {
+  try {
+    const reviewData = await Review.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
 
-router.get('/', async (req, res) => {
-    try {
-      const reviewsData = await Reviews.findAll({
-        include: [
-          {
-            model: User,
-            attributes: ['name', 'email'],
-          },
-          {
-            model: Products,
-            attributes: ['id', 'product_type', 'description']
-          },
-          {
-            model: Reviews,
-            attributes: ['title','description']
-          },
-          {
-            model: Comments,
-            attributes: ['id','body','rating']
-          }
-        ],
-      });
+    const Review = reviewData.map((review) => review.get({ plain: true }));
 
-      const reviews = reviewsData.map((review) => review.get({ plain: true }));
+    res.render("homepage", {
+      ...Review,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-      res.render('homepage', { 
-        reviews, 
-        logged_in: req.session.logged_in 
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+router.get("/review/:id", async (req, res) => {
+  try {
+    const reviewData = await Review.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
 
-  router.get('/reviews/:id', async (req, res) => {
-    try {
-      const reviewsData = await Reviews.findByPk(req.params.id, {
-        include: [
-          {
-            model: User,
-            attributes: ['name'],
-          },
-          ,
-          {
-            model: Products,
-            attributes: ['id', 'product_type', 'description']
-          },
-          {
-            model: Reviews,
-            attributes: ['title','description']
-          },
-          {
-            model: Comments,
-            attributes: ['id','body','rating']
-          }
-        ],
-      });
-  
-      const review = reviewsData.get({ plain: true });
-  
-      res.render('reviews', {
-        ...review,
-        logged_in: req.session.logged_in
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+    const review = reviewData.get({ plain: true });
+
+    res.render("review", {
+      ...review,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});

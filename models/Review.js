@@ -21,27 +21,23 @@ Review.init(
     },
     comment_id: {
       type: DataTypes.STRING,
-<<<<<<< HEAD
       allowNull: false,
-      references: {
-        model: 'Comment',
-        key: 'id'
-      }
-=======
-      references: {
-        model: 'comment',
-        key: 'id',
-      },
->>>>>>> main
     },
     user_id: {
-      type: DatTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'User',
-        key: 'id'
-      }
-    }
+        model: "User",
+        key: "id",
+      },
+    },
+    product: {
+      type: DataTypes.STRING,
+    },
+    comment_text: {
+      type: DataTypes.CHAR(500),
+      allowNull: true,
+    },
   },
   {
     sequelize,
