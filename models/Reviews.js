@@ -11,17 +11,20 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    header: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    body: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    comment: {
+    comment_id: {
       type: DataTypes.STRING,
-      allowNull: false,
+      references: {
+        model: 'comment',
+        key: 'id',
+      },
     },
   },
   {
