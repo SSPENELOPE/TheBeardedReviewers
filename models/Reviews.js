@@ -21,11 +21,11 @@ Review.init(
     },
     comment_id: {
       type: DataTypes.STRING,
-      allowNull: false,
       references: {
         model: 'Comment',
         key: 'id'
       }
+
     },
     user_id: {
       type: DatTypes.INTEGER,
