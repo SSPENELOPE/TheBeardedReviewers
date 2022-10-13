@@ -25,12 +25,19 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    review: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'Reviews',
+        key: 'id'
+      }
+    }
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "Product",
+    modelName: "product",
   }
 );
 

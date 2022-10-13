@@ -22,13 +22,25 @@ Review.init(
     comment_id: {
       type: DataTypes.STRING,
       allowNull: false,
+      references: {
+        model: 'Comment',
+        key: 'id'
+      }
     },
+    user_id: {
+      type: DatTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'User',
+        key: 'id'
+      }
+    }
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "Review",
+    modelName: "review",
   }
 );
 
