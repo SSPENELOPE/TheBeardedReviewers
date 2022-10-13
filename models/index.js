@@ -6,7 +6,7 @@
 // User has Many Comments
 
 const User = require("./User");
-const Reviews = require("./Reviews");
+const Reviews = require("./Review");
 const Products = require("./Products");
 const Comments = require("./Comments");
 
