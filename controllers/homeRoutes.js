@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Reviews, User, Comments, Products } = require('../models');
+const { Reviews, User, Comment, Products } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -12,15 +12,11 @@ router.get('/', async (req, res) => {
             attributes: ['name', 'email'],
           },
           {
-            model: Products,
-            attributes: ['id', 'product_type', 'description']
-          },
-          {
             model: Reviews,
             attributes: ['title','description']
           },
           {
-            model: Comments,
+            model: Comment,
             attributes: ['id','body','rating']
           }
         ],

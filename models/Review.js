@@ -19,19 +19,23 @@ Review.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
     comment_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       references: {
-        model: 'Comment',
+        model: 'comment',
         key: 'id'
       }
-
     },
     user_id: {
-      type: DatTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'User',
+        model: 'user',
         key: 'id'
       }
     }
