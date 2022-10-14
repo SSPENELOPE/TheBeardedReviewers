@@ -11,10 +11,6 @@ router.get('/', async (req, res) => {
             model: User,
             attributes: ['name', 'email'],
           },
-      /*     {
-            model: Products,
-            attributes: ['id', 'product_type', 'description']
-          }, */
           {
             model: Reviews,
             attributes: ['title','description']
