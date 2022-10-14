@@ -22,10 +22,19 @@ Review.init(
     comment_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'comment',
-        key: 'id',
-      },
+        model: 'Comment',
+        key: 'id'
+      }
+
     },
+    user_id: {
+      type: DatTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'User',
+        key: 'id'
+      }
+    }
   },
   {
     sequelize,
