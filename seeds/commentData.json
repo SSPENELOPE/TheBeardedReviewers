@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "comment_text": "That's so stupid",
         "comment_id": "1"
     },
@@ -18,5 +19,13 @@
     {
         "comment_text": "Life changing!",
         "comment_id": "5"
+=======
+        "rating": "5",
+        "body": "Love it"
+    },
+    {
+        "rating": "7",
+        "body": "Great"
+>>>>>>> main
     }
 ]

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [{
     "title": "Oily and musty",
     "product": "Quinn's Ox Cart Grow Oil",
@@ -38,4 +39,15 @@
 
 }
 
+=======
+[
+    {
+        "title": "Burly Bills Beard Balm",
+        "description": "Worst product i ever bought, I think they just packaged a bunch of crisco into a can and shipped it out. 0/10 DO NOT BUY"
+    },
+    {
+        "title": "Trojan Trimmers",
+        "description": "These trimmers are the Awesome, great battery life and cleanly cuts your beard for you"
+    }
+>>>>>>> main
 ]

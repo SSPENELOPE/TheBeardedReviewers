@@ -21,6 +21,7 @@ Review.init(
     },
     date_created: {
       type: DataTypes.DATE,
+<<<<<<< HEAD
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
@@ -31,15 +32,33 @@ Review.init(
         model: "comment",
         key: "id",
       },
+=======
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    comment_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'comment',
+        key: 'id'
+      }
+>>>>>>> main
     },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
+<<<<<<< HEAD
         model: "user",
         key: "id",
       },
     },
+=======
+        model: 'user',
+        key: 'id'
+      }
+    }
+>>>>>>> main
   },
   {
     sequelize,

@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 const router = require("express").Router();
 const { Review, User } = require("../models");
 const withAuth = require("../utils/auth");
+=======
+const router = require('express').Router();
+const { Reviews, User, Comment, Products } = require('../models');
+const withAuth = require('../utils/auth');
+>>>>>>> main
 
 router.get("/", async (req, res) => {
   try {
@@ -13,7 +19,28 @@ router.get("/", async (req, res) => {
       ],
     });
 
+<<<<<<< HEAD
     const Review = reviewData.map((review) => review.get({ plain: true }));
+=======
+router.get('/', async (req, res) => {
+    try {
+      const reviewsData = await Reviews.findAll({
+        include: [
+          {
+            model: User,
+            attributes: ['name', 'email'],
+          },
+          {
+            model: Reviews,
+            attributes: ['title','description']
+          },
+          {
+            model: Comment,
+            attributes: ['id','body','rating']
+          }
+        ],
+      });
+>>>>>>> main
 
     res.render("homepage", {
       ...Review,
@@ -78,3 +105,42 @@ router.get('/login', (req, res) => {
 
 module.exports = router;
 
+<<<<<<< HEAD
+=======
+  router.get('/reviews/:id', async (req, res) => {
+    try {
+      const reviewsData = await Reviews.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+          ,
+          {
+            model: Products,
+            attributes: ['id', 'product_type', 'description']
+          },
+          {
+            model: Reviews,
+            attributes: ['title','description']
+          },
+          {
+            model: Comments,
+            attributes: ['id','body','rating']
+          }
+        ],
+      });
+  
+      const review = reviewsData.get({ plain: true });
+  
+      res.render('reviews', {
+        ...review,
+        logged_in: req.session.logged_in
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+  module.exports = router;
+>>>>>>> main

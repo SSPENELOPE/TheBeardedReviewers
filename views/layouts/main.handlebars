@@ -4,7 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
   <title>The Bearded Reviewer</title>
+=======
+  <title>Bearded Reviewers</title>
+>>>>>>> main
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -12,6 +16,7 @@
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
+<<<<<<< HEAD
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
@@ -19,6 +24,18 @@
         <button class="no-button" id="logout">logout</button>
         {{else}}
         <a href="/login">login</a>
+=======
+
+    <h1>Welcome To The Bearded Reviewers!</h1>
+      <nav>
+        <h3><a href="/">Homepage</a></h3>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/profile">Profile</a> |
+        <button class="no-button" id="logout">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+>>>>>>> main
         {{/if}}
       </nav>
     </header>
@@ -37,5 +54,10 @@
   {{/if}}
 </body>
 
+<<<<<<< HEAD
 </html>
 
+=======
+
+</html>
+>>>>>>> main
