@@ -1,33 +1,15 @@
-// Product has Many Reviews
-// Users has Many Product*
-// Product Belongs to User
-// Review Belongs to User
-// Comment Belongs to User // Comment is an attribute of the Reviews object
-// User has Many Comments
-
 const User = require("./User");
-const Reviews = require("./Reviews");
-const Products = require("./Products");
-const Comments = require("./Comments");
+const Reviews = require("./Review");
+const Comment = require("./Comments");
 
-Products.hasMany(Reviews, {
-  foreignKey: "id",
+
+Comment.belongsTo(User, {
+  foreignKey: "comment_id",
 });
 
-Products.hasMany(Comments, {
-  foreignKey: "id",
-});
+User.hasMany(Comment, {
+  foreignKey: 'id',
+  onDelete: 'CASCADE',
+})
 
-User.hasMany(Products, {
-  foreignKey: "id",
-});
-
-Products.belongsTo(User, {
-  foreignKey: "id",
-});
-
-Reviews.belongsTo(User, {
-  foreignKey: "id",
-});
-
-module.exports = { User, Reviews, Products, Comments };
+module.exports = { User, Reviews, Comment };
