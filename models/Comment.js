@@ -19,7 +19,7 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "User",
+        model: "user",
         key: "id",
       },
     },
@@ -27,7 +27,7 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "Review",
+        model: "review",
         key: "id",
       },
     },
