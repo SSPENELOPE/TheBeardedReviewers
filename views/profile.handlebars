@@ -23,11 +23,11 @@
         </form>
     </div>
 
-    {{#if reviews.length}}
+    {{#if review.length}}
     <div class="col-md-6 review-list">
         <h3>Your Reviews:</h3>
 
-        {{#each reviews as |review|}}
+        {{#each review as |review|}}
         <div class="row mb-2">
             <div class="col-md-8">
                 <h4><a href="/review/{{review.id}}">

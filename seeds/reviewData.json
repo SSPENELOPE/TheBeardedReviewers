@@ -1,3 +1,36 @@
+[{
+    "title": "Oily and musty",
+    "product": "Quinn's Ox Cart Grow Oil",
+    "description": "Truly smells like it came of the back of an ox cart.",
+    "comment_text": "I though it made me smell masculine."
+},
 {
-    
+    "title": "Subtle and smooth",
+    "product": "Crazy Eights Mustache Wax",
+    "description": "Holds my handlebars in place.",
+    "comment_text": "For hipsters and baristas."
+
+},
+{
+    "title": "Breakage abound",
+    "product": "Henry's Pine Tar Beard Shampoo",
+    "description": "Forest fresh.",
+    "comment_text": "Smells like pine-sol"
+
+},
+{
+    "title": "LineUp",
+    "product": "Facial hair razor",
+    "description": "Clean lines and no bumps.",
+    "comment_text": "Too weak for my bristly beard hairs"
+
+},
+{
+    "title": "Just for Men",
+    "product": "SprayGrey",
+    "description": "Supposed to give me a salt and pepper look, but really makes me look old.",
+    "comment_text": "Here comes Santa Clause is more like it"
+
 }
+
+]
