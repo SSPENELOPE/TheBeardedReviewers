@@ -20,7 +20,7 @@ Review.init(
       allowNull: false,
     },
     comment_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       references: {
         model: 'comment',
         key: 'id',
@@ -31,7 +31,7 @@ Review.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "Review",
+    modelName: "review",
   }
 );
 

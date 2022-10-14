@@ -7,10 +7,10 @@
 
 const User = require("./User");
 const Reviews = require("./Review");
-const Products = require("./Products");
-const Comments = require("./Comments");
+/* const Products = require("./Products"); */
+const Comment = require("./Comments");
 
-Products.hasMany(Reviews, {
+/* Products.hasMany(Reviews, {
   foreignKey: "id",
 });
 
@@ -24,10 +24,15 @@ User.hasMany(Products, {
 
 Products.belongsTo(User, {
   foreignKey: "id",
+}); */
+
+Comment.belongsTo(User, {
+  foreignKey: "comment_id",
 });
 
-Reviews.belongsTo(User, {
-  foreignKey: "id",
-});
+User.hasMany(Comment, {
+  foreignKey: 'id',
+  onDelete: 'CASCADE',
+})
 
-module.exports = { User, Reviews, Products, Comments };
+module.exports = { User, Reviews, Comment };
