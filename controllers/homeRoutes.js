@@ -1,23 +1,16 @@
 const router = require('express').Router();
-const { Reviews, User, Comment, Products } = require('../models');
-const withAuth = require('../utils/auth');
+const { Review, User, Comment } = require('../models');
+/* const withAuth = require('../utils/auth'); */
 
 
 router.get('/', async (req, res) => {
     try {
-      const reviewsData = await Reviews.findAll({
+      const reviewsData = await Review.findAll({
         include: [
           {
-            model: User,
-            attributes: ['name', 'email'],
-          },
-          {
-            model: Reviews,
-            attributes: ['title','description']
-          },
-          {
             model: Comment,
-            attributes: ['id','body','rating']
+            attributes: ['id','body','rating'],
+            include: [User]
           }
         ],
       });
@@ -26,7 +19,7 @@ router.get('/', async (req, res) => {
 
       res.render('homepage', { 
         reviews, 
-        logged_in: req.session.logged_in 
+        logged_in: req.session.logged_in   
       });
     } catch (err) {
       res.status(500).json(err);
@@ -35,23 +28,14 @@ router.get('/', async (req, res) => {
 
   router.get('/reviews/:id', async (req, res) => {
     try {
-      const reviewsData = await Reviews.findByPk(req.params.id, {
+      const reviewsData = await Review.findByPk(req.params.id, {
         include: [
           {
             model: User,
             attributes: ['name'],
           },
-          ,
           {
-            model: Products,
-            attributes: ['id', 'product_type', 'description']
-          },
-          {
-            model: Reviews,
-            attributes: ['title','description']
-          },
-          {
-            model: Comments,
+            model: Comment,
             attributes: ['id','body','rating']
           }
         ],
@@ -59,7 +43,7 @@ router.get('/', async (req, res) => {
   
       const review = reviewsData.get({ plain: true });
   
-      res.render('reviews', {
+      res.render('review', {
         ...review,
         logged_in: req.session.logged_in
       });
