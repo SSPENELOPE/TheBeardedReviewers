@@ -1,0 +1,22 @@
+[
+    {
+        "comment_text": "That's so stupid",
+        "comment_id": "1"
+    },
+    {
+        "comment_text": "That's awesome",
+        "comment_id": "2"
+    },
+    {
+        "comment_text": "Love it!",
+        "comment_id": "3"
+    },
+    {
+        "comment_text": "Hate it!",
+        "comment_id": "4"
+    },
+    {
+        "comment_text": "Life changing!",
+        "comment_id": "5"
+    }
+]

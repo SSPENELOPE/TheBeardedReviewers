@@ -25,7 +25,7 @@ Review.init(
       defaultValue: DataTypes.NOW,
     },
     comment_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: "comment",
@@ -39,9 +39,6 @@ Review.init(
         model: "user",
         key: "id",
       },
-    },
-    product: {
-      type: DataTypes.STRING,
     },
   },
   {
