@@ -28,7 +28,7 @@
         <h3>Your Reviews:</h3>
 
         {{#each review as |review|}}
-        <div class="row mb-2">
+        <div class="row mb-2 review-desc">
             <div class="col-md-8">
                 <h4><a href="/review/{{review.id}}">
                 {{review.description}}</a></h4>
@@ -42,4 +42,5 @@
     {{/if}}
 </div>
 
-<script src="models\User.js"></script>
+<script src="../models/Review.js"></script>
+<script src="../models/User.js"></script>

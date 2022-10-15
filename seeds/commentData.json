@@ -1,31 +1,14 @@
 [
     {
-<<<<<<< HEAD
-        "comment_text": "That's so stupid",
-        "comment_id": "1"
-    },
-    {
-        "comment_text": "That's awesome",
-        "comment_id": "2"
-    },
-    {
-        "comment_text": "Love it!",
-        "comment_id": "3"
-    },
-    {
-        "comment_text": "Hate it!",
-        "comment_id": "4"
-    },
-    {
-        "comment_text": "Life changing!",
-        "comment_id": "5"
-=======
+        "id": "1",
         "rating": "5",
-        "body": "Love it"
+        "comment_text": "Love it",
+        "review_id": "3245"
     },
     {
+        "id": "2",
         "rating": "7",
-        "body": "Great"
->>>>>>> main
+        "comment_text": "Great",
+        "review_id": "9734"
     }
 ]

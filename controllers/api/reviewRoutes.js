@@ -1,8 +1,8 @@
-const router = require('express').Router();
-const { Review } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const Review = require("../../models/Review");
+const withAuth = require("../../utils/auth");
 
-router.post('/review', withAuth, async (req, res) => {
+router.post("/review", withAuth, async (req, res) => {
   try {
     const newReview = await Review.create({
       ...req.body,
@@ -15,7 +15,7 @@ router.post('/review', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/review/:id', withAuth, async (req, res) => {
+router.delete("/review/:id", withAuth, async (req, res) => {
   try {
     const reviewData = await Review.destroy({
       where: {
@@ -25,7 +25,7 @@ router.delete('/review/:id', withAuth, async (req, res) => {
     });
 
     if (!reviewData) {
-      res.status(404).json({ message: 'No review found with this id!' });
+      res.status(404).json({ message: "No review found with this id!" });
       return;
     }
 

@@ -1,31 +1,5 @@
 [
     {
-<<<<<<< HEAD
-"name": "Joshua",
-"email": "josh@justjoshin.net",
-"password": "password123"
-},
-{
-    "name": "Andres",
-    "email": "andres@gmail.com",
-    "password": "password123"
-},
-{
-    "name": "Geoffrey",
-    "email": "geoff@citystate.edu",
-    "password": "password123"
-},
-{
-    "name": "Edward",
-    "email": "ed@phaseme.com",
-    "password": "password123"
-},
-{
-    "name": "Hunter",
-    "email": "hunter@bowhunter.com",
-    "password": "password123"
-}
-=======
         "name": "jimmy",
         "email": "jimmy@email.com",
         "password": "1234"
@@ -40,5 +14,4 @@
         "email": "billy@email.com",
         "password": "notApassword"
     }
->>>>>>> main
 ]

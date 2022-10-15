@@ -4,24 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bearded Reviewers</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <title>The Bearded Reviewers</title>
+  <link rel="stylesheet" href="../../public/css/jass.css">
+  <link rel="stylesheet" href="../../public/css/style.css">
 </head>
 
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
-
-    <h1>Welcome To The Bearded Reviewers!</h1>
+      <img src="../../public/images/BeardIcon.jpg" alt="Bearded Reviewer"/>
+      <h1>
+        <a href="/">BEARDED|REVIEWER</a>
+      </h1>
       <nav>
         <h3><a href="/">Homepage</a></h3>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">Profile</a> |
+        <a href="../profile.handlebars">Profile</a> |
         <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a href="/login">Login</a>
+        <a href="../login.handlebars">Login</a>
         {{/if}}
       </nav>
     </header>
@@ -36,9 +38,8 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  <script src="../../public/js/logout.js"></script>
   {{/if}}
 </body>
-
 
 </html>
