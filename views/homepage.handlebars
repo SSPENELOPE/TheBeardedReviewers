@@ -4,16 +4,11 @@
 
 <!-- Loop Over all the reviews as a review -->
 {{#each reviews as |review| }}
-<div class="row mb-4 project">
+<div class="row mb-4 post">
   <div class="col-md-5">
     <h2>
-      <a href="/project/{{review.id}}">{{review.title}}</a>
+      <a href="/reviews/{{review.id}}" class="title">{{review.title}}</a>
     </h2>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{review.description}}
-    </p>
   </div>
   <div class="col-md-5">
      <p>Created by {{review.user.name}} on {{format_date review.date_created}}</p>
