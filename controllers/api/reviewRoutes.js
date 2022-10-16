@@ -15,7 +15,7 @@ router.post("/review", withAuth, async (req, res) => {
   }
 });
 
-router.delete("/review/:id", withAuth, async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const reviewData = await Review.destroy({
       where: {

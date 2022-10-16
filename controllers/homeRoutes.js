@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Review, User } = require("../models");
-/* const withAuth = require('../utils/auth'); */
+const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
@@ -17,6 +17,47 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/review/:id", async (req, res) => {
+  try {
+    const reviewsData = await Review.findByPk(req.params.id, {
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['name'],
+      //   },
+      // ],
+    });
+    const review = reviewsData.map((review) => review.get({ plain: true }));
+
+    res.render("review", {
+      review,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Use withAuth middleware to prevent access to route
+router.get("/profile", withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Review }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render("profile", {
+      user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -25,50 +66,6 @@ router.get("/login", (req, res) => {
   }
 
   res.render("login");
-});
-
-// GET profile of all user reviews
-router.get("/profile/:id", async (req, res) => {
-  try {
-    const profileData = await User.findByPk(req.params.id, {
-      include: [
-        { model: Review, attributes: ["title", "description", "date_created"] },
-      ],
-    });
-
-    const profile = profileData.get({ plain: true });
-
-    res.render("profile", {
-      ...profile,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// GET one review
-router.get("/review/:id", async (req, res) => {
-  try {
-    const reviewData = await Review.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-        { model: Review, attributes: ["title", "description", "date_created"] },
-      ],
-    });
-
-    const review = reviewData.get({ plain: true });
-
-    res.render("review", {
-      ...review,
-      // logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
 });
 
 module.exports = router;
