@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Review, User } = require("../models");
+const { Review, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -19,15 +19,19 @@ router.get("/", async (req, res) => {
 
 router.get("/review/:id", async (req, res) => {
   try {
-    const reviewsData = await Review.findByPk(req.params.review_id, {
+    const reviewsData = await Review.findByPk(req.params.id, {
       include: [
         {
           model: User,
           attributes: ["name"],
         },
+        {
+          model: Comment,
+          attributes: ["comment_text"],
+        },
       ],
     });
-    const review = reviewsData.map((review) => review.get({ plain: true }));
+    const review = reviewsData.get({ plain: true });
 
     res.render("review", {
       ...review,
@@ -45,6 +49,7 @@ router.get("/profile", withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.id, {
       attributes: { exclude: ["password"] },
       include: [{ model: Review }],
+      attributes: ["description", "date_created", "comment_text"],
     });
 
     const user = userData.get({ plain: true });
@@ -61,7 +66,7 @@ router.get("/profile", withAuth, async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/profile");
+    res.redirect("/homepage");
     return;
   }
 
