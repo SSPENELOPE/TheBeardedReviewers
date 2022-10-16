@@ -64,11 +64,11 @@ router.get("/review/:id", async (req, res) => {
 
     res.render("review", {
       ...review,
-      logged_in: req.session.logged_in,
+      // logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-  module.exports = router;
+module.exports = router;

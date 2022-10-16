@@ -1137,16 +1137,18 @@ form .form-label {
   display: inline-block;
   font-size: 1.2rem;
   margin: 0.625rem 0 0.25rem 0.3rem;
+  color:#191818;
+  font-weight: 900;
 }
 
 form .form-input {
   width: 100%;
   padding: 0.75rem;
-  color: #1a1a1a;
-  background-color: #ffffff;
+  color: white;
+  background-color: rgba(172, 172, 172, 0.317);
   margin: 0.625rem 0;
   font-size: 1.2rem;
-  border: 1px solid #484848;
+  border: 2px solid #484848;
   border-radius: 0.3rem;
 }
 
@@ -1703,3 +1705,5 @@ form [type='radio'] {
     align-content: center;
   }
 }
+
+

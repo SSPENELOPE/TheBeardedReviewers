@@ -5,27 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Bearded Reviewers</title>
-  <link rel="stylesheet" href="../../public/css/jass.css">
-  <link rel="stylesheet" href="../../public/css/style.css">
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <img src="../../public/images/BeardIcon.jpg" alt="Bearded Reviewer"/>
+    <header class="display-flex col-md-12 align-center justify-space-around p-2">
+      <span onclick="openNav()"><img class = "pointer" src="/images/BeardIcon.jpg" alt="Bearded Reviewer"/></span>
       <h1>
-        <a href="/">BEARDED|REVIEWER</a>
+        <a href="/" class="closebtn pointer" onclick="closeNav()">The Bearded Reviewers</a>
       </h1>
-      <nav>
+      <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <nav class="overlay-content">
         <h3><a href="/">Homepage</a></h3>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <h3><a href="/TheBeardedReviewers/views/profile.handlebars">Profile</a></h3> |
+        <h3><a href="/profile">Profile</a></h3> |
         <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <h3><a href="/TheBeardedReviewers/views/login.handlebars">Login</a></h3>
+        <h3><a href="/login">Login</a></h3>
         {{/if}}
       </nav>
+      </div>
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
@@ -38,8 +41,19 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="../../public/js/logout.js"></script>
+  <script src="/js/logout.js"></script>
   {{/if}}
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
 </body>
 
 </html>
