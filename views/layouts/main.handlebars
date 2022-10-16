@@ -20,10 +20,10 @@
         <h3><a href="/">Homepage</a></h3>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="../profile.handlebars">Profile</a> |
+        <h3><a href="/TheBeardedReviewers/views/profile.handlebars">Profile</a></h3> |
         <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a href="../login.handlebars">Login</a>
+        <h3><a href="/TheBeardedReviewers/views/login.handlebars">Login</a></h3>
         {{/if}}
       </nav>
     </header>

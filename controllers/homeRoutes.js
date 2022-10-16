@@ -10,8 +10,6 @@ router.get("/", async (req, res) => {
 
     res.render("homepage", {
       reviews,
-      reviews,
-      reviews,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -73,4 +71,4 @@ router.get("/review/:id", async (req, res) => {
   }
 });
 
-module.exports = router;
+  module.exports = router;
