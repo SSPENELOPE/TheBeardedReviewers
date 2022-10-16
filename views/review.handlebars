@@ -1,8 +1,23 @@
-<div class="text-center">
-    <h2>{{name}}</h2>
-    <p>{{review_description}}</p>
+<div class="card bg-dark text-light">
+    <div class="title text-light">
+        <h1 class="text-center">{{title}}</h1>
+    </div>
+    <p class="text-center">{{description}}</p>
     <p>Created by {{user.name}} on {{format_date date_created}}</p>
-    <p>
-        <span for="img" aria-label=""
-    </p>
+    <div class="card text-light">
+        {{#each comments as |comment|}}
+        <h5>{{user.comment}}</h5>
+        {{/each}}
+    </div>
+    {{#if logged_in}}
+      <div class="form-group">
+        <label for="comment">Leave a comment</label>
+        <input class="form-input" type="text" id="comment" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Leave Comment</button>
+      </div>
+      {{else}}
+      <h6><a href="/login">Login</a> to leave a comment</h6>
+      {{/if}}
 </div>
