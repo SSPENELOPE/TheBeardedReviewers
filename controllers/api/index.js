@@ -1,31 +1,22 @@
-const User = require("../../models/User");
-const Products = require("../../models/Products");
-const Reviews = require("../../models/Reviews");
-const Comments = require("../../models/Comments");
+const { Comment, User, Review } = require("../../models")
 
-User.hasMany(Reviews, {
+User.hasMany(Review, {
   foreign_key: "",
   onDelete: "CASCADE",
 });
 
-Reviews.hasMany(Comments, {
-    foreign_key: "",
+Review.belongsTo(User, {
+    foreignKey: "user_id",
+})
+
+Review.hasMany(Comment, {
+    foreign_key: "review_id",
     onDelete: "CASCADE",
 });
 
-Products.belongsTo(Reviews, {
+
+Comment.belongsTo(Review, {
     foreign_key: "",
-    onDelete: "CASCADE",
 });
 
-Reviews.belongsTo(Products, {
-    foreign_key: "",
-    onDelete: "CASCADE",
-});
-
-Comments.belongsTo(Reviews, {
-    foreign_key: "",
-    onDelete: "CASCADE",
-});
-
-module.exports = { User, Products, Reviews, Comments };
+module.exports = { User, Review, Comment };
