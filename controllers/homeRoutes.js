@@ -20,17 +20,17 @@ router.get("/", async (req, res) => {
 router.get("/review/:id", async (req, res) => {
   try {
     const reviewsData = await Review.findByPk(req.params.id, {
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: ['name'],
-      //   },
-      // ],
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
     });
     const review = reviewsData.map((review) => review.get({ plain: true }));
 
     res.render("review", {
-      review,
+      ...review,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -50,7 +50,7 @@ router.get("/profile", withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     res.render("profile", {
-      user,
+      ...user,
       logged_in: true,
     });
   } catch (err) {
