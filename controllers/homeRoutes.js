@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
 
 router.get("/review/:id", async (req, res) => {
   try {
-    const reviewsData = await Review.findByPk(req.params.id, {
+    const reviewsData = await Review.findByPk(req.params.review_id, {
       include: [
         {
           model: User,
@@ -42,7 +42,7 @@ router.get("/review/:id", async (req, res) => {
 router.get("/profile", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = await User.findByPk(req.session.id, {
       attributes: { exclude: ["password"] },
       include: [{ model: Review }],
     });
