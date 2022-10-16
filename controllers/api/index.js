@@ -1,22 +1,6 @@
-const { Comment, User, Review } = require("../../models")
+const router = require('express').Router();
+const userRoutes = require('./userRoutes');
 
-User.hasMany(Review, {
-  foreign_key: "",
-  onDelete: "CASCADE",
-});
+router.use('/users', userRoutes);
 
-Review.belongsTo(User, {
-    foreignKey: "user_id",
-})
-
-Review.hasMany(Comment, {
-    foreign_key: "review_id",
-    onDelete: "CASCADE",
-});
-
-
-Comment.belongsTo(Review, {
-    foreign_key: "",
-});
-
-module.exports = { User, Review, Comment };
+module.exports = router;
