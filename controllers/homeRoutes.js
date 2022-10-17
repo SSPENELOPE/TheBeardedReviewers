@@ -7,8 +7,9 @@ router.get("/", async (req, res) => {
     const reviewsData = await Review.findAll({
       include: [
         {
-          model: User,
-          attributes: ["name"],
+          model: Comment,
+          attributes: ["id", "comment_text", "rating"],
+          include: [User],
         },
       ],
     });
@@ -31,6 +32,10 @@ router.get("/review/:id", async (req, res) => {
         {
           model: User,
           attributes: ["name"],
+        },
+        {
+          model: Comment,
+          attributes: ["id", "comment_text", "rating"],
         },
       ],
     });
