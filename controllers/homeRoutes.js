@@ -13,10 +13,10 @@ router.get("/", async (req, res) => {
       ],
     });
 
-    const reviews = reviewsData.map((review) => review.get({ plain: true }));
+    const review = reviewsData.map((review) => review.get({ plain: true }));
 
     res.render("homepage", {
-      ...reviews,
+      review,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
