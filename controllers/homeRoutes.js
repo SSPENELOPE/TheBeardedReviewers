@@ -4,12 +4,19 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const reviewsData = await Review.findAll({});
+    const reviewsData = await Review.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
 
     const reviews = reviewsData.map((review) => review.get({ plain: true }));
 
     res.render("homepage", {
-      reviews,
+      ...reviews,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -49,7 +56,6 @@ router.get("/profile", withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.id, {
       attributes: { exclude: ["password"] },
       include: [{ model: Review }],
-      attributes: ["description", "date_created", "comment_text"],
     });
 
     const user = userData.get({ plain: true });
