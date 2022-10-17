@@ -13,10 +13,10 @@ router.get("/", async (req, res) => {
       ],
     });
 
-    const review = reviewsData.map((review) => review.get({ plain: true }));
+    const reviews = reviewsData.map((review) => review.get({ plain: true }));
 
     res.render("homepage", {
-      review,
+      reviews,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -31,10 +31,6 @@ router.get("/review/:id", async (req, res) => {
         {
           model: User,
           attributes: ["name"],
-        },
-        {
-          model: Comment,
-          attributes: ["comment_text"],
         },
       ],
     });
