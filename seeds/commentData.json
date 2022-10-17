@@ -1,14 +1,16 @@
 [
     {
         "id": "1",
-        "rating": "5",
         "comment_text": "Love it",
-        "review_id": "3245"
+        "rating": "5",
+        "user_id": "1",
+        "review_id": "1"
     },
     {
         "id": "2",
-        "rating": "7",
         "comment_text": "Great",
-        "review_id": "9734"
+        "rating": "7",
+        "user_id": "2",
+        "review_id": "2"
     }
 ]

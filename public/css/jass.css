@@ -256,6 +256,7 @@ textarea {
   overflow: auto;
 }
 
+
 /**
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
@@ -376,6 +377,7 @@ h1 {
 }
 
 h2 {
+  margin-top: .75rem;
   font-size: 2rem;
 }
 
@@ -396,9 +398,13 @@ h6 {
 }
 
 p {
-  font-size: 1.1rem;
-  margin: 0 0 1rem;
+  font-size: 1.3rem;
+  margin: 1rem;
+  padding-left: 1rem;
   line-height: 1.5;
+  font-weight: 700;
+  background-color: #aeaeae;
+  border-radius: .5rem;
 }
 
 ul,

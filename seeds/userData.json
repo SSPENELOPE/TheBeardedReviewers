@@ -1,15 +1,18 @@
 [
     {
+        "id": "1",
         "name": "jimmy",
         "email": "jimmy@email.com",
         "password": "1234"
     },
     {
+        "id": "2",
         "name": "timmy",
         "email": "timmy@email.com",
         "password": "solidPassword"
     },
     {
+        "id": "3",
         "name": "billy",
         "email": "billy@email.com",
         "password": "notApassword"

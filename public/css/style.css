@@ -11,10 +11,11 @@ header {
 }
 
 header h1 {
+    margin: 1rem;  
     background-color: rgb(48, 42, 38);
     opacity: 70%;
     padding: .7em;
-    border-radius: 5rem;
+    border-radius: .5rem;
 }
 
 nav {
@@ -37,9 +38,9 @@ nav h3 a {
 }
 
 .post {
-    margin-top: 99px;
+    margin-top: 3rem;
     background-color: gray;
-    border-radius:2rem;
+    border-radius:.5rem;
     opacity: 75%;
 }
 

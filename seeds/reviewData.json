@@ -2,11 +2,15 @@
     {
         "id": "1",
         "title": "Burly Bills Beard Balm",
-        "description": "Worst product i ever bought, I think they just packaged a bunch of crisco into a can and shipped it out. 0/10 DO NOT BUY"
+        "description": "Worst product i ever bought, I think they just packaged a bunch of crisco into a can and shipped it out. 0/10 DO NOT BUY",
+        "comment_id": "1",
+        "user_id": "1"
     },
     {
         "id": "2",
         "title": "Trojan Trimmers",
-        "description": "These trimmers are the Awesome, great battery life and cleanly cuts your beard for you"
+        "description": "These trimmers are the Awesome, great battery life and cleanly cuts your beard for you",
+        "comment_id": "2",
+        "user_id": "2"
     }
 ]
