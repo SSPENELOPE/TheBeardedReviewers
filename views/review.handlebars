@@ -4,19 +4,17 @@
     </div>
     <p class="text-center">{{description}}</p>
     <p>Created by {{user.name}} on {{format_date date_created}}</p>
-    <div class="card text-light">
+    <div class="comment-card card text-light">
         {{#each comments as |comment|}}
-        <h5>{{user.comment}}</h5>
+        <h5>{{{comment.body}}}</h5>
         {{/each}}
     </div>
     {{#if logged_in}}
-      <div class="form-group">
-        <label for="comment">Leave a comment</label>
+      <div class="form-group col-lg-10" id="new-comment-form">
+        <label for="comment">
+          <button class="btn btn-primary" type="submit">Leave Comment</button>
+        </label>
         <input class="form-input" type="text" id="comment" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Leave Comment</button>
-      </div>
       {{else}}
       <h6><a href="/login">Login</a> to leave a comment</h6>
       {{/if}}
