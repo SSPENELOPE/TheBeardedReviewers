@@ -34,3 +34,11 @@ nav h3 a {
     margin-top: 55px;
     background-color: gray;
 }
+
+#email-login {
+    color: black;
+}
+
+#password-login {
+    color: black;
+}
