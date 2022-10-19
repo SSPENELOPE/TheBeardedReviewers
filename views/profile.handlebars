@@ -11,11 +11,11 @@
         <form class="form new-review-form">
             <div class="form-title">
                 <label for="review-title">Review Title:</label>
-                <input class="form-input" type="text" id="form-title" />
+                <input class="form-input" type="text" id="form-title" review-title="{{id}}"/>
             </div>
             <div class="form-review">
                 <label for="review">Please input your review:</label>
-                <input class="form-input" type="text" id="form-review" />
+                <input class="form-input review-desc" type="text" id="form-review" />
             </div>
             <div class="post-review">
                 <button type="submit" class="btn btn-primary">Post Review</button>
@@ -34,10 +34,13 @@
                 {{review.name}}</a></h4>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE REVIEW</button>
+                <button class="btn btn-sm btn-danger" data-id="{{review.id}}" id="review-list">DELETE REVIEW</button>
             </div>
         </div>
         {{/each}}
     </div>
     {{/if}}
 </div>
+
+
+<script src="/js/profile.js"></script>
