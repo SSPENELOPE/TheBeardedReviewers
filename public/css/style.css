@@ -3,6 +3,14 @@ body {
    background-size: cover;
 }
 
+header .review:not(:last-child) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 20vh;
+    width: 100;
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -12,8 +20,11 @@ header {
 }
 
 header h1 {
-    background-color: aqua;
+    background-color: #2d3e50; 
     padding: .7em;
+    color: whitesmoke;
+    border-radius: 0.25rem;
+    opacity: 89%;
 }
 
 nav {
@@ -41,4 +52,9 @@ nav h3 a {
 
 #password-login {
     color: black;
+}
+
+#comment.form-input {
+    width: 80%;
+    margin: 0.625rem;
 }
