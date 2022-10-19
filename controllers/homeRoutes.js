@@ -29,20 +29,26 @@ router.get('/', async (req, res) => {
   router.get('/reviews/:id', async (req, res) => {
     try {
       const reviewsData = await Review.findByPk(req.params.id, {
-/*         include: [
+        include: [
           {
             model: User,
             attributes: ['name'],
           },
           {
             model: Comment,
-            attributes: ['id','body','rating']
+            attributes: ['id','body', 'user_id'], 
+            include: [
+              {
+                model: User,
+                attributes: ['name'],
+              },
+            ]
           }
-        ], */
+        ],
       });
   
       const review = reviewsData.get({ plain: true });
-  
+      console.log(review);
       res.render('review', {
         ...review,
         logged_in: req.session.logged_in
