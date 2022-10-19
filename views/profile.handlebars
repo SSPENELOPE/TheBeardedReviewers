@@ -11,7 +11,7 @@
         <form class="form new-review-form">
             <div class="form-title">
                 <label for="review-title">Review Title:</label>
-                <input class="form-input" type="text" id="form-title" />
+                <input class="form-input" type="text" id="form-title" review-title="{{id}}"/>
             </div>
             <div class="form-review">
                 <label for="review">Please input your review:</label>
@@ -34,7 +34,7 @@
                 {{review.name}}</a></h4>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE REVIEW</button>
+                <button class="btn btn-sm btn-danger" data-id="{{review.id}}" id="review-list">DELETE REVIEW</button>
             </div>
         </div>
         {{/each}}
@@ -42,4 +42,4 @@
     {{/if}}
 </div>
 
-<script src="models\User.js"></script>
+<script src="/js/profile.js"></script>

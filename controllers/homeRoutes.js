@@ -7,6 +7,10 @@ router.get("/", async (req, res) => {
     const reviewsData = await Review.findAll({
       include: [
         {
+          model: User,
+          attributes: ["name"],
+        },
+        {
           model: Comment,
           attributes: ["id", "body", "rating"],
           include: [User],
@@ -35,14 +39,20 @@ router.get("/reviews/:id", async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ["id", "body"],
+          attributes: ["id", "body", "review_id", "user_id"],
+          include: [
+            {
+              model: User,
+              attributes: ["name"],
+            },
+          ],
         },
       ],
     });
 
     const review = reviewsData.get({ plain: true });
     const commentData = await Comment.findByPk(req.params.id, {});
-
+    console.log(review);
     const comments = commentData.get({ plain: true });
     res.render("review", {
       ...review,

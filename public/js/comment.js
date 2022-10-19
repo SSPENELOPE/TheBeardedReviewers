@@ -1,19 +1,22 @@
-const newFormHandler = async (event) => {
+const commentFormHandler = async (event) => {
   event.preventDefault();
 
-  const comment = document.querySelector("#comment-card").value.trim();
+  const body = document.querySelector("#comment").value.trim();
 
-  if (comment) {
-    const response = await fetch(`/api/review`, {
+  if (body) {
+    const response = await fetch("/api/comment/", {
       method: "POST",
-      body: JSON.stringify({ body }),
+      body: JSON.stringify({
+        body,
+        review_id: event.target.getAttribute("data-review"),
+      }),
       headers: {
         "Content-Type": "application/json",
       },
     });
 
     if (response.ok) {
-      document.location.replace("/review");
+      document.location.reload();
     } else {
       alert("Failed to create comment");
     }
@@ -21,5 +24,5 @@ const newFormHandler = async (event) => {
 };
 
 document
-  .querySelector(".new-comment-form")
-  .addEventListener("submit", newFormHandler);
+  .querySelector("#aComment")
+  .addEventListener("click", commentFormHandler);

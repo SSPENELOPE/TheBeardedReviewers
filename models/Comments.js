@@ -13,7 +13,7 @@ Comment.init(
     },
     rating: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     body: {
       type: DataTypes.STRING,
