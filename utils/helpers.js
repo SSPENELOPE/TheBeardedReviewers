@@ -7,8 +7,4 @@ module.exports = {
       // format large numbers with commas
       return parseInt(amount).toLocaleString();
     },
-},
-
-module.exports.getName = (name) => {
-  return 'user'
 }

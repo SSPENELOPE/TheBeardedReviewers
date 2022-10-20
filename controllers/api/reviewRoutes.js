@@ -25,9 +25,14 @@ router.delete("/:id", withAuth, async (req, res) => {
       },
     });
 
+
     if (!reviewData) {
       res.status(404).json({ message: "Review not found, please try again" });
       return;
+      }
+        res.status(200).json(reviewData);
+    } catch (err) {
+        res.status(500).json(err);
     }
 
     res.status(200).json(reviewData);
