@@ -1,0 +1,41 @@
+## Project 2: The Bearded Review
+
+## Description
+
+A discussion forum for the growing conversation around facial hair products, history, fashion and lore.
+
+## Installation
+
+From the command line, enter <c>npm i</c>. Next, setup the database by typing <c>mysql -u root -p</c> and enter the password found in the .env file.
+
+## How to use the website:
+
+The URL is: https://still-beach-01787.herokuapp.com/
+
+## Challenges
+
+Some of the challenges that we ran into (because no code can be perfect), is Github conflicts. Anytime we tried to commit code to Github, it would copy data and turn the entire project into error city. -\_-
+Heroku also didn't like us. multiple bad requests, website taking too long to load, requiring a credit card to run a program, not loading seed data, that was fun.
+
+## Future development
+
+We plan to implement a user rating system using beard themed icons. We would also like to create a separate card for an affiliate link. We plan to integrate a friendlier, cleaner UI. Finally, we would like to add subcomments in a comment feed.
+
+License used: MIT for npm: MIT License
+Copyright (c) [2022] [KG] [JH] [TP]
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+Credit: Justin Hollis, Tyler Poepping, Keith Gray
