@@ -1,8 +1,8 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector("#form-title").value.trim();
-  const description = document.querySelector("#form-review").value.trim();
+  const title = document.querySelector('#form-title').value.trim();
+  const description = document.querySelector('#form-review').value.trim();
 
   if (title && description) {
     const response = await fetch("/api/review", {
