@@ -51,12 +51,9 @@ router.get("/reviews/:id", async (req, res) => {
     });
 
     const review = reviewsData.get({ plain: true });
-    const commentData = await Comment.findByPk(req.params.id, {});
     console.log(review);
-    const comments = commentData.get({ plain: true });
     res.render("review", {
       ...review,
-      ...comments,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
