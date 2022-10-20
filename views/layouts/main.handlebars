@@ -15,8 +15,8 @@
 
     <h1>Welcome To The Bearded Reviewers!</h1>
       <nav>
-        <h3><a href="/">Homepage</a></h3>
         <!-- Conditionally render login or logout links -->
+        <h3><a href="/">Homepage</a></h3>
         {{#if logged_in}}
         <h3><a href="/profile">Profile</a></h3>
         <button class="no-button btn btn-primary" id="logout">Logout</button>
@@ -30,10 +30,9 @@
       {{{ body }}}
     </main>
     <footer>
-      
+     
     </footer>
   </div>
-
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>

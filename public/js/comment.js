@@ -23,6 +23,8 @@ const commentFormHandler = async (event) => {
   }
 };
 
+
+
 document
   .querySelector("#aComment")
   .addEventListener("click", commentFormHandler);
