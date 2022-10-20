@@ -11,10 +11,12 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
+
     rating: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
+
     body: {
       type: DataTypes.STRING,
       allowNull: false,
