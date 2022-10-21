@@ -1,23 +1,23 @@
-## Project 2: The Bearded Review
+# Project 2: The Bearded Review
 
-## Description
+# Description
 
 A discussion forum for the growing conversation around facial hair products, history, fashion and lore.
 
-## Installation
+# Installation
 
 From the command line, enter <c>npm i</c>. Next, setup the database by typing <c>mysql -u root -p</c> and enter the password found in the .env file.
 
-## How to use the website:
+# How to use the website:
 
 The URL is: https://still-beach-01787.herokuapp.com/
 
-## Challenges
+# Challenges
 
 Some of the challenges that we ran into (because no code can be perfect), is Github conflicts. Anytime we tried to commit code to Github, it would copy data and turn the entire project into error city. -\_-
 Heroku also didn't like us. multiple bad requests, website taking too long to load, requiring a credit card to run a program, not loading seed data, that was fun.
 
-## Future development
+# Future development
 
 We plan to implement a user rating system using beard themed icons. We would also like to create a separate card for an affiliate link. We plan to integrate a friendlier, cleaner UI. Finally, we would like to add subcomments in a comment feed.
 
